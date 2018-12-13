@@ -32,7 +32,7 @@ Use a service object
 1. It should just take a few lines of code to allow one client to talk to another. Remember, all clients should have already been created in the `app/clients` file.
 1. `app/services/slack_channels_to_airtable.rb` is a good example to start from.
 
-### Rake tasks
+### Run existing tasks
 
 For now, all rake tasks should go in the Rakefile. This can be changed if the file gets too big.
 
@@ -42,14 +42,18 @@ An example rake task is:
 
 This can be run from the command line, or the heroku console.
 
+To run from the heroku console:
+
+`$ heroku run console`
+`$ rake slack_channels_to_airtable`
+
 ### Heroku
 
-TODO
-
-### Contributing
-
-TODO
-
+1. `$ Clone this repo`
+1. `$ heroku create`
+1. `$ git push heroku master`
+1. `$ heroku ps:scale web=1`
+1. `$ heroku addons:create scheduler:standard`
 ### Testing
 
-TODO
+`$ rspec`
