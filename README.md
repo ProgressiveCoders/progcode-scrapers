@@ -15,6 +15,7 @@ Note: This app was bootstrapped using this helpful guide: https://flatironschool
 1. clone the app
 1. `$ bundle install`
 1. `$ shotgun` to run the server
+1. `$ cp .env.example to .env` and enter correct values
 
 ### Add a client
 
@@ -49,7 +50,7 @@ To run from the heroku console:
 
 ### Heroku
 
-1. `$ Clone this repo`
+1. Clone this repo
 1. `$ heroku create`
 1. `$ git push heroku master`
 1. `$ heroku ps:scale web=1`
