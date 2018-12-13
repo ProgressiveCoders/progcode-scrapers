@@ -1,5 +1,5 @@
 class ApplicationController < Sinatra::Base
   get '/' do
-     "Hello, Scraper!"
+     "ok"
   end
 end

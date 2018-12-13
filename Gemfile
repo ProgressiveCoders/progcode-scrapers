@@ -14,3 +14,8 @@ gem 'shotgun'
 gem 'dotenv'
 gem 'slack-ruby-client'
 gem 'airrecord'
+
+group :test do
+  gem 'rack-test'
+  gem 'rspec'
+end
