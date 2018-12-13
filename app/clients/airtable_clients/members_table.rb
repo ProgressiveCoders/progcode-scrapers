@@ -30,7 +30,7 @@ class AirtableMembersTable < Airrecord::Table
     existing_member["Member Handle"] = parse_handle(member)
     existing_member["Member Name"]   = member.real_name
     existing_member["TZ"]            = member.tz
-    existing_member["TZ Label"]      = member.tz_label
+    # existing_member["TZ Label"]      = member.tz_label
     existing_member["What I Do"]     = member.profile.title
     existing_member["Deleted?"]      = member.deleted
     existing_member.save
@@ -41,7 +41,7 @@ class AirtableMembersTable < Airrecord::Table
       "Member Handle"  => parse_handle(member),
       "Member Name"    => member.real_name,
       "TZ"             => member.tz,
-      "TZ Label"       => member.tz_label,
+      # "TZ Label"       => member.tz_label,
       "What I Do"      => member.profile.title,
       "Deleted?"       => member.deleted,
       "slack_id"       => member.id,
