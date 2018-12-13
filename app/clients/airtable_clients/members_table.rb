@@ -7,7 +7,6 @@ class AirtableChannelListTable < Airrecord::Table
 
   def self.add_or_update_channel(channel, channel_details)
     if self.channel_exists?(channel)
-      puts "1"
       # update existing
       existing_channel = self.find(channel_id(channel))
       existing_channel["Channel Name"]     = channel[:name]
