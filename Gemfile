@@ -11,3 +11,5 @@ gem "pry"
 gem "rack"
 gem 'thin'
 gem 'shotgun'
+gem 'dotenv'
+gem 'slack-ruby-client'
