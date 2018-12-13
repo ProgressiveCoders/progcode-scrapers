@@ -3,7 +3,7 @@ Airrecord.api_key = ENV['AIRTABLE_KEY']
 
 class AirtableChannelListTable < Airrecord::Table
   self.base_key   = ENV['AIRTABLE_APP']
-  self.table_name = ENV['AIRTABLE_BASE']
+  self.table_name = ENV['AIRTABLE_CHANNEL_LIST_TABLE_NAME']
 
   def self.add_or_update_channel(channel, channel_details)
     if self.channel_exists?(channel)
