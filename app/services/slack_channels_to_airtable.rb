@@ -11,7 +11,10 @@ module SlackChannelsToAirtable
 
   def self.connect_apis
     slack_client = SlackClient.new
-    slack_client.channels.each do |channel|
+    channels = slack_client.channels
+    total_channels = channels.length
+    channels.reverse.each_with_index do |channel, index|
+      self.log("SlackChannelsToAirtable #{index} of #{total_channels}")
       channel_details = slack_client.channels_info(channel)
       AirtableChannelListTable.add_or_update_channel(channel, channel_details)
     end
