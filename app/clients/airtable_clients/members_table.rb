@@ -7,8 +7,9 @@ class AirtableChannelListTable < Airrecord::Table
 
   def self.add_or_update_channel(channel, channel_details)
     if self.channel_exists?(channel)
-      # update exissting
-      existing_channel = self.find(matches[0].id)
+      puts "1"
+      # update existing
+      existing_channel = self.find(channel_id(channel))
       existing_channel["Channel Name"]     = channel[:name]
       existing_channel["Creation Date"]    = Time.at(channel[:created]).strftime("%m/%d/%Y")
       existing_channel["Membership"]       = channel[:num_members]
@@ -18,8 +19,7 @@ class AirtableChannelListTable < Airrecord::Table
       existing_channel["Channel Topic"]    = channel_details.topic.value
       existing_channel.save
     else
-      # create new
-      self.new({
+      new_channel = self.new({
         "Channel Name"     => channel[:name],
         "Creation Date"    => Time.at(channel[:created]).strftime("%m/%d/%Y"),
         "Membership"       => channel[:num_members],
@@ -28,11 +28,16 @@ class AirtableChannelListTable < Airrecord::Table
         "Last Activity"    => Time.at((channel_details&.latest&.ts || channel_details&.last_read).to_f).strftime("%m/%d/%Y"),
         "Channel Topic"    => channel_details.topic.value,
       })
+      new_channel.create
     end
   end
 
   private
   def self.channel_exists?(channel)
     self.all({filter: "{Channel Name} = \"#{channel[:name]}\""}).any?
+  end
+
+  def self.channel_id(channel)
+    self.all({filter: "{Channel Name} = \"#{channel[:name]}\""})[0].id
   end
 end
