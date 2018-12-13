@@ -8,5 +8,12 @@ describe "SlackMembersToAirtable" do
       SlackMembersToAirtable.run
       expect(SlackMembersToAirtable).to have_received(:connect_apis)
     end
+
+    it "should call #handle_errors if there are errors" do
+      allow(SlackMembersToAirtable).to receive(:connect_apis).and_raise("Exception")
+      allow(SlackMembersToAirtable).to receive(:handle_errors)
+      SlackMembersToAirtable.run
+      expect(SlackMembersToAirtable).to have_received(:handle_errors)
+    end
   end
 end

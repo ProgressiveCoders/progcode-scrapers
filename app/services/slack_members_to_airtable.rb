@@ -5,7 +5,7 @@ module SlackMembersToAirtable
       self.connect_apis
       self.log("Finish: SlackMembersToAirtable")    
     rescue => e
-      self.handle_error(e)    
+      self.handle_errors(e)    
     end
   end
 
@@ -20,7 +20,7 @@ module SlackMembersToAirtable
     puts msg
   end
 
-  def self.handle_error(e)
+  def self.handle_errors(e)
     puts "Error #{e.message}"
     puts "Error: SlackMembersToAirtable"
   end
