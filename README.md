@@ -46,6 +46,10 @@ This can be run from the command line, or the heroku console.
 
 TODO
 
-## Contributing
+### Contributing
+
+TODO
+
+### Testing
 
 TODO
