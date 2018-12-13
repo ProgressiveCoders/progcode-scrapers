@@ -1,7 +1,7 @@
 
 Airrecord.api_key = ENV['AIRTABLE_KEY']
 
-class AirtableMembersTable < Airrecord::Table
+class AirtableChannelListTable < Airrecord::Table
   self.base_key   = ENV['AIRTABLE_APP']
   self.table_name = ENV['AIRTABLE_BASE']
 
