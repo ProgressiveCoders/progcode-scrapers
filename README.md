@@ -21,7 +21,7 @@ Note: This app was bootstrapped using this helpful guide: https://flatironschool
 1. Add a gem for your client to the Gemfile.
 1. Don't forget to run `$ bundle install`.
 1. Create a new file or folder in `app/clients`. Slack is only needs one file because it's a simple API. Airtable uses a folder because it's easier to use separate file for each table.
-1. That's it!
+1. Make sure you add logs. This way errors can be more easily debugged. Check out the slack example in the clients folder.
 
 ### Connect clients
 
