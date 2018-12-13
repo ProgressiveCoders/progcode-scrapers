@@ -10,4 +10,8 @@ class SlackClient
   def members
     @client.users_list.members
   end
+
+  def channels_info(channel)
+    @client.channels_info(channel: channel[:id]).channel
+  end
 end
