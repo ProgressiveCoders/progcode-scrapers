@@ -10,6 +10,6 @@ module SlackChannelsToAirtable
   end
 
   def self.log(msg)
-    puts
+    puts msg
   end
 end
