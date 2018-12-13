@@ -10,3 +10,5 @@ The word "scraper" doesn't appear anywhere that isn't plain text. So feel free t
 
 Created using this helpful guide: https://flatironschool.com/blog/how-to-build-a-sinatra-web-app-in-10-steps/
 
+To run app:
+`$ shotgun`
