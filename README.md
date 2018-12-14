@@ -2,7 +2,7 @@
 
 ## Quickstart
 
-This program will be hosted on heroku and provide scraping services for progcode. Currently slack members and channels are copied over to airtable.
+This program is intended to be hosted on heroku and provide scraping services for progcode. Currently slack members and channels are copied over to airtable.
 
 Once on heroku, the app will run each command daily. The app has basic error handling and a fair amount of debugging comments.
 
