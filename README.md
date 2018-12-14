@@ -1,6 +1,23 @@
 # Progcode Scraper
 
-Sinatra app that will host a collection of scrapers meant to consolidate
+## Quickstart
+
+This program will be hosted on heroku and provide scraping services for progcode. Currently slack members and channels are copied over to airtable.
+
+Once on heroku, the app will run each command daily. The app has basic error handling and a fair amount of debugging comments.
+
+To view debugging comments, run: `$ heroku logs -n 1500`
+
+To run scrapers by hand:
+
+* `$ heroku run rake slack_channels_to_airtable`
+* `$ heroku run rake slack_members_to_airtable`
+
+You will be able to view live debugging comments and progress updates as you go.
+
+## Introduction
+
+This is a Sinatra app that will host a collection of scrapers meant to consolidate
 * https://github.com/ProgressiveCoders/prog-channels
 * https://github.com/ProgressiveCoders/prog-members
 
@@ -48,7 +65,9 @@ To run from the heroku console:
 `$ heroku run console`
 `$ rake slack_channels_to_airtable`
 
-### Heroku
+### heroku
+
+To push create your own heroku instance:
 
 1. Clone this repo
 1. `$ heroku create`
