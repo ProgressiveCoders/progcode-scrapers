@@ -14,7 +14,7 @@ module SlackMembersToAirtable
     members = slack_client.members
     total_members = members.length
     members.reverse.each_with_index do |member, index|
-      self.log("SlackMembersToAirtable #{index} of #{total_members}")
+      self.log("SlackMembersToAirtable #{index + 1} of #{total_members}")
       AirtableMembersTable.add_or_update_member(member)
     end
   end
