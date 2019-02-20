@@ -15,6 +15,13 @@ To run scrapers by hand:
 
 You will be able to view live debugging comments and progress updates as you go.
 
+## API Keys
+
+Note that you must be logged in and have been given the appropriate permissions by the ProgCode admin team.
+
+* [Slack token](https://api.slack.com/custom-integrations/legacy-tokens)
+* [Airtable key](https://airtable.com/account)
+
 ## Introduction
 
 This is a Sinatra app that will host a collection of scrapers meant to consolidate
