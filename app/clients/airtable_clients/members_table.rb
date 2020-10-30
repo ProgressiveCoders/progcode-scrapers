@@ -29,6 +29,7 @@ class AirtableMembersTable < Airrecord::Table
     existing_member = self.find(member_id(member))
     existing_member["Member Handle"] = parse_handle(member)
     existing_member["Member Name"]   = member.real_name
+    existing_member["Contact E-Mail"] = member.profile.email
     existing_member["TZ"]            = member.tz
     existing_member["What I Do"]     = member.profile.title
     existing_member["Deleted?"]      = member.deleted
@@ -39,6 +40,7 @@ class AirtableMembersTable < Airrecord::Table
     new_member = self.new({
       "Member Handle"  => parse_handle(member),
       "Member Name"    => member.real_name,
+      "Contact E-Mail" => member.profile.email,
       "TZ"             => member.tz,
       "What I Do"      => member.profile.title,
       "Deleted?"       => member.deleted,
